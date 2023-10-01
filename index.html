@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Creare reteta</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="app.css"
+  >
+
+</head>
+
+<body class="text-dark">
+  <header>
+    <nav class="navbar navbar-expand-lg bg-white">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand"
+          title="Formular reteta"
+          href="/"
+        >Formular reteta</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
+          Menu
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mt-lg-5 pt-lg-3">
+    <header class="p-0 px-lg-3 container text-center">
+      <h1 class="d-none d-lg-block">Formular reteta</h1>
+
+      <div class="bg-light py-3">
+        PROGRESS
+      </div>
+    </header>
+
+    <form class="mt-3 container bg-white mt-lg-4 pt-lg-3 pb-5">
+      <div class="row pb-5">
+        <div class="col-12 col-lg-6">
+          <!-- recipe meta fieldset -->
+          <fieldset class="d-flex flex-column gap-4 mb-4">
+            <div>
+              <label
+                for="recipe-name"
+                class="mb-2"
+              >Numele retetei* </label>
+
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Supa de pui"
+                  name="recipe-name"
+                  id="recipe-name"
+                  required
+                >
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="recipe-short-description"
+                class="mb-2"
+              >Descriere scurtă*</label>
+
+              <div class="input-group">
+                <textarea
+                  class="form-control"
+                  placeholder="Leave a comment here"
+                  id="recipe-short-description"
+                  name="recipe-short-description"
+                  placeholder="Va fi vizibilă cititorilor înainte de a deschide pagina rețetei"
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="recipe-long-description"
+                class="mb-2"
+              >Descrierea rețetei*</label>
+
+              <textarea
+                name="recipe-long-description"
+                id="recipe-long-description"
+                placeholder="Povestește despre această rețetă"
+                class="form-control"
+                required
+              ></textarea>
+            </div>
+          </fieldset>
+          <!-- / recipe meta fieldset -->
+
+          <!-- author fieldset -->
+          <fieldset class="d-flex flex-column gap-4">
+            <div class="d-flex gap-2 align-items-center toggle">
+              <input
+                class="form-check-input mt-0 pointer"
+                type="checkbox"
+                name="add-author"
+                id="add-author"
+                value="add-author"
+                aria-label="Adaugă autor rețetă (opțional)"
+              >
+
+              <label
+                for="add-author"
+                class="flex-grow-1 pointer"
+              >Adaugă autor rețetă (opțional)</label>
+            </div>
+
+            <div class="d-none flex-column gap-4">
+              <div>
+                <label for="recipe-author-name">Numele și prenumele autorului*</label>
+
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="ex. Jane Doe"
+                    name="recipe-author-name"
+                    id="recipe-author-name"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div>
+                <label for="recipe-author-email">E-mailul autorului*</label>
+
+                <div class="input-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="ex. janedoe@email.com"
+                    name="recipe-author-email"
+                    id="recipe-author-email"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div>
+                <label for="recipe-author-site">Website-ul autorului (opțional)</label>
+
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="ex. janedoe.com"
+                    name="recipe-author-site"
+                    id="recipe-author-site"
+                  >
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <!-- / author fieldset -->
+
+        </div>
+
+        <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+          <div class="w-lg-75">
+            <!-- image fieldset -->
+            <fieldset class="d-flex flex-column gap-4">
+              <label for="recipe-image">Imaginea principală*</label>
+
+              <label class="image-upload-placeholder d-flex justify-content-center align-items-center pointer">
+                <input
+                  type="file"
+                  name="recipe-image"
+                  id="recipe-image"
+                  class="d-none"
+                  required
+                >
+
+                <span class="text-center">
+                  <i class="bi bi-file-earmark-plus"></i>
+
+                  <span class="d-block">Încarcă o poză</span>
+                </span>
+
+              </label>
+            </fieldset>
+            <!-- / image fieldset -->
+          </div>
+        </div>
+      </div>
+
+      <footer class="py-3 form-footer">
+        <div class="row">
+          <div class="col-12 col-lg-4 offset-lg-4 px-4">
+            <button
+              type="button"
+              title="Urmatorul pas"
+              class="btn btn-success w-100"
+              disabled
+            >Pasul urmator</button>
+          </div>
+        </div>
+      </footer>
+    </form>
+  </main>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"
+  ></script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+body {
+  color: #343a40;
+}
+
+.toggle:has([type='checkbox']:checked) ~ div {
+  display: flex !important;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
+.image-upload-placeholder {
+  background: var(--bs-gray-100);
+  border: 1px dashed var(--bs-gray-500);
+  padding: 8px 40px;
+  aspect-ratio: 1;
+}
+
+.image-upload-placeholder:hover {
+  background-color: var(--bs-gray-200);
+}
+
+.form-footer {
+  background: var(--bs-white);
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+@media (min-width: 992px) {
+  body {
+    background: var(--bs-gray-100);
+  }
+
+  .w-lg-75 {
+    width: 75% !important;
+  }
+
+  .form-footer {
+    width: 100%;
+    position: static;
+  }
+}
