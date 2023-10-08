@@ -66,7 +66,7 @@
     </header>
 
     <form class="mt-3 container bg-white mt-lg-4 pt-lg-3 pb-5">
-      <div class="row pb-5">
+      <div class="row pb-5 tab-content tab-step-1">
         <div class="col-12 col-lg-6">
           <!-- recipe meta fieldset -->
           <fieldset class="d-flex flex-column gap-4 mb-4">
@@ -215,6 +215,273 @@
               </label>
             </fieldset>
             <!-- / image fieldset -->
+          </div>
+        </div>
+      </div>
+
+      <div class="row pb-5 flex-lg-row-reverse tab-content tab-step-2">
+        <div class="col-12 col-lg-6">
+          <h6 class="mb-3 d-none d-lg-block">Listă ingrediente</h6>
+
+          <ul class="list-group list-group-flush border-bottom">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+                <h6>Pulpă de pui</h6>
+
+                <span>500 grame</span>
+              </div>
+
+              <div>
+                <button
+                  type="button"
+                  title="Elimina ingredient"
+                  class="border-0 bg-transparent text-danger fs-4"
+                ><i class="bi bi-trash"></i></button>
+              </div>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+                <h6>Pulpă de pui</h6>
+
+                <span>500 grame</span>
+              </div>
+
+              <div>
+                <button
+                  type="button"
+                  title="Elimina ingredient"
+                  class="border-0 bg-transparent text-danger fs-4"
+                ><i class="bi bi-trash"></i></button>
+              </div>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+                <h6>Pulpă de pui</h6>
+
+                <span>500 grame</span>
+              </div>
+
+              <div>
+                <button
+                  type="button"
+                  title="Elimina ingredient"
+                  class="border-0 bg-transparent text-danger fs-4"
+                ><i class="bi bi-trash"></i></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+          <!-- add ingredient -->
+          <fieldset class="d-none d-lg-block">
+            <header class="d-lg-none">
+              <label class="h5 fw-normal">Adaugă ingredient</label>
+
+              <button
+                type="button"
+                title="Inchide"
+                class="bg-transparent border-0"
+              ><i class="bi bi-x-lg"></i></button>
+            </header>
+
+            <div>
+              <div class="mb-4 row">
+                <div class="col-12">
+                  <label
+                    for="ingredient-name"
+                    class="mb-2"
+                  >Numele ingredient* </label>
+
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="ex. Pulpă de pui"
+                      name="ingredient-name"
+                      id="ingredient-name"
+                      required
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-6">
+                  <div>
+                    <label
+                      for="ingredient-quantity"
+                      class="mb-2"
+                    >Cantitate*</label>
+
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="ex. Pulpă de pui"
+                        name="ingredient-quantity"
+                        id="ingredient-quantity"
+                        required
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div>
+                    <label
+                      for="ingredient-measurement"
+                      class="mb-2"
+                    >Unitate de măsură*</label>
+
+                    <div class="input-group">
+                      <select
+                        class="form-select"
+                        name="ingredient-measurement"
+                        id="ingredient-measurement"
+                      >
+                        <option value="g">Grame (g)</option>
+                        <option value="kg">Kilograme (kg)</option>
+                        <option value="ml">Mililitri (ml)</option>
+                        <option value="l">Litri (l)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <!-- / add ingredient -->
+
+          <div class="text-center text-lg-start mt-lg-4">
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              title="Adauga ingredient"
+            >
+              <i class="bi bi-plus"></i>
+
+              Adauga ingredient
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row pb-5 flex-lg-row-reverse tab-content tab-step-3">
+        <div class="col-12 col-lg-6">
+          <h6 class="mb-3 d-none d-lg-block">Listă pași</h6>
+
+          <ul class="list-group list-group-flush border-bottom">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+                <h6>Aduceți apa la fiert</h6>
+
+                <span>
+                  Puneți pe foc 2 litri de apă și fierbeți
+                  până începe să clocotească
+                </span>
+              </div>
+
+              <div>
+                <button
+                  type="button"
+                  title="Elimina ingredient"
+                  class="border-0 bg-transparent text-danger fs-4"
+                ><i class="bi bi-trash"></i></button>
+              </div>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="w-75">
+                <h6>Fierbeți pulpele de pui</h6>
+
+                <span>
+                  Se adaugă sare și se pun la fiert pulpele
+                  pentru 15 minute
+                </span>
+              </div>
+
+              <div>
+                <button
+                  type="button"
+                  title="Elimina ingredient"
+                  class="border-0 bg-transparent text-danger fs-4"
+                ><i class="bi bi-trash"></i></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+          <!-- add step -->
+          <fieldset class="d-none d-lg-block">
+            <header class="d-lg-none">
+              <label class="h5 fw-normal">Adaugă pas</label>
+
+              <button
+                type="button"
+                title="Inchide"
+                class="bg-transparent border-0"
+              ><i class="bi bi-x-lg"></i></button>
+            </header>
+
+            <div>
+              <div class="mb-4 row">
+                <div class="col-12">
+                  <label
+                    for="step-name"
+                    class="mb-2"
+                  >Titlu pas* </label>
+
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="ex. Fierbe pulpele la foc mic"
+                      name="step-name"
+                      id="step-name"
+                      required
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <div>
+                    <label
+                      for="ingredient-quantity"
+                      class="mb-2"
+                    >Descriere pas*</label>
+
+                    <div class="input-group">
+                      <textarea
+                        name="ingredient-quantity"
+                        id="ingredient-quantity"
+                        class="form-control"
+                        placeholder="Descrie acțiunile de urmat pentru a finaliza pasul"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <!-- / add step -->
+
+          <div class="text-center text-lg-start mt-lg-4">
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              title="Adauga pasul x"
+            >
+              <i class="bi bi-plus"></i>
+
+              Adauga pasul x
+            </button>
           </div>
         </div>
       </div>
