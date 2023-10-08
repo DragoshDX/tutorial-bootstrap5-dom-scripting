@@ -24,6 +24,49 @@ input[type='color']:focus,
   outline: 0 none;
 }
 
+.step-progress {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.step-progress .step::before {
+  content: '';
+  display: block;
+  border: 2px solid var(--bs-gray-300);
+  background: var(--bs-white);
+  width: 0.75rem;
+  aspect-ratio: 1;
+  margin: 0 auto 0.5rem auto;
+  border-radius: 50%;
+}
+
+.step-progress .step.step-active::before {
+  border-color: var(--bs-success);
+}
+
+.step-progress .step.step-complete::before {
+  --offset: 3px;
+  background-color: var(--bs-success);
+  border-color: var(--bs-success);
+  width: calc(0.75rem + var(--offset));
+  margin-top: calc(var(--offset) * -1);
+}
+
+.step-progress .step button {
+  border: 0;
+  background: transparent;
+  color: var(--bs-gray-600);
+}
+
+.step-progress .step.step-complete button {
+  color: var(--bs-gray-800);
+}
+
+.step-progress .step.step-active button {
+  font-weight: 700;
+}
+
 .toggle:has([type='checkbox']:checked) ~ div {
   display: flex !important;
 }
