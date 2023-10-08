@@ -24,6 +24,15 @@ input[type='color']:focus,
   outline: 0 none;
 }
 
+.form-check-input:checked {
+  background-color: var(--bs-green);
+  border-color: var(--bs-green);
+}
+
+.form-check-input:focus {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #19875499;
+}
+
 .step-progress {
   list-style: none;
   display: grid;
