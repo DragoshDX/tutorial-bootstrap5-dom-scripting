@@ -60,7 +60,7 @@
     <header class="p-0 px-lg-3 container text-center">
       <h1 class="d-none d-lg-block">Formular reteta</h1>
 
-      <div class="bg-light py-3">
+      <div class="bg-light pt-4 pb-3">
         <ul class="step-progress">
           <li class="step step-complete">
             <button
@@ -111,6 +111,7 @@
                   name="recipe-name"
                   id="recipe-name"
                   minlength="5"
+                  value="Supa de pui"
                   required
                 >
               </div>
@@ -125,12 +126,12 @@
               <div class="input-group">
                 <textarea
                   class="form-control"
-                  placeholder="Leave a comment here"
+                  placeholder="Descriere scurta"
                   id="recipe-short-description"
                   name="recipe-short-description"
                   placeholder="Va fi vizibilă cititorilor înainte de a deschide pagina rețetei"
                   required
-                ></textarea>
+                >Descriere scurta</textarea>
               </div>
             </div>
 
@@ -146,7 +147,7 @@
                 placeholder="Povestește despre această rețetă"
                 class="form-control"
                 required
-              ></textarea>
+              >Povestește despre această rețetă</textarea>
             </div>
           </fieldset>
           <!-- / recipe meta fieldset -->
@@ -180,7 +181,7 @@
                     placeholder="ex. Jane Doe"
                     name="recipe-author-name"
                     id="recipe-author-name"
-                    required
+                    data-conditionally-required
                   >
                 </div>
               </div>
@@ -195,7 +196,7 @@
                     placeholder="ex. janedoe@email.com"
                     name="recipe-author-email"
                     id="recipe-author-email"
-                    required
+                    data-conditionally-required
                   >
                 </div>
               </div>
@@ -230,8 +231,7 @@
                   type="file"
                   name="recipe-image"
                   id="recipe-image"
-                  class="d-none"
-                  required
+                  class="opacity-0 position-absolute"
                 >
 
                 <span class="text-center">
@@ -247,9 +247,18 @@
         </div>
       </div>
 
-      <div class="row pb-5 flex-lg-row-reverse tab-content tab-step-2 d-none">
+      <div
+        class="row pb-5 flex-lg-row-reverse tab-content tab-step-2"
+        style="display: none;"
+      >
         <div class="col-12 col-lg-6">
           <h6 class="mb-3 d-none d-lg-block">Listă ingrediente</h6>
+
+          <select
+            name="recipe-ingredients"
+            multiple
+            required
+          ></select>
 
           <ul class="list-group list-group-flush border-bottom">
             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -304,9 +313,14 @@
 
         <div class="col-12 col-lg-6 mt-4 mt-lg-0">
           <!-- add ingredient -->
-          <fieldset class="d-none d-lg-block">
-            <header class="d-flex d-lg-none justify-content-between align-items-center">
-              <label class="h5 fw-normal m-0">Adaugă ingredient</label>
+          <fieldset
+            class="z-1 d-lg-block add-ingredient-fieldset container py-4 p-lg-0"
+            style="display: none;"
+          >
+            <header class="d-flex d-lg-none justify-content-between align-items-center mb-5 mb-lg-2">
+              <label class="h5 fw-normal m-0">
+                Adaugă ingredient
+              </label>
 
               <button
                 type="button"
@@ -315,8 +329,8 @@
               ></button>
             </header>
 
-            <div>
-              <div class="mb-4 row">
+            <div class="d-flex flex-column gap-4">
+              <div class="row">
                 <div class="col-12">
                   <label
                     for="ingredient-name"
@@ -330,7 +344,6 @@
                       placeholder="ex. Pulpă de pui"
                       name="ingredient-name"
                       id="ingredient-name"
-                      required
                     >
                   </div>
                 </div>
@@ -351,7 +364,6 @@
                         placeholder="ex. Pulpă de pui"
                         name="ingredient-quantity"
                         id="ingredient-quantity"
-                        required
                       >
                     </div>
                   </div>
@@ -370,6 +382,7 @@
                         name="ingredient-measurement"
                         id="ingredient-measurement"
                       >
+                        <option value="">-- selecteaza --</option>
                         <option value="g">Grame (g)</option>
                         <option value="kg">Kilograme (kg)</option>
                         <option value="ml">Mililitri (ml)</option>
@@ -379,6 +392,18 @@
                   </div>
                 </div>
               </div>
+
+              <div class="row d-lg-none">
+                <div class="col">
+                  <button
+                    type="button"
+                    title="Adauga Ingredient"
+                    class="btn btn-success w-100"
+                  >
+                    Adauga Ingredient
+                  </button>
+                </div>
+              </div>
             </div>
           </fieldset>
           <!-- / add ingredient -->
@@ -386,7 +411,7 @@
           <div class="text-center text-lg-start mt-lg-4">
             <button
               type="button"
-              class="btn btn-outline-success"
+              class="btn btn-outline-success add-ingredient"
               title="Adauga ingredient"
             >
               <i class="bi bi-plus"></i>
@@ -397,7 +422,10 @@
         </div>
       </div>
 
-      <div class="row pb-5 flex-lg-row-reverse tab-content tab-step-3 d-none">
+      <div
+        class="row pb-5 flex-lg-row-reverse tab-content tab-step-3 d-none"
+        style="display: none;"
+      >
         <div class="col-12 col-lg-6">
           <h6 class="mb-3 d-none d-lg-block">Listă pași</h6>
 
@@ -470,7 +498,6 @@
                       placeholder="ex. Fierbe pulpele la foc mic"
                       name="step-name"
                       id="step-name"
-                      required
                     >
                   </div>
                 </div>
@@ -490,7 +517,6 @@
                         id="ingredient-quantity"
                         class="form-control"
                         placeholder="Descrie acțiunile de urmat pentru a finaliza pasul"
-                        required
                       ></textarea>
                     </div>
                   </div>
@@ -518,14 +544,19 @@
         <div class="row">
           <div class="col-12 col-lg-4 offset-lg-4 px-4">
             <button
-              type="submit"
+              type="button"
               title="Urmatorul pas"
-              class="btn btn-success w-100"
+              class="btn btn-success w-100 hero-button"
               disabled
             >Pasul urmator</button>
           </div>
         </div>
       </footer>
+
+      <div
+        class="overlay"
+        style="display: none;"
+      ></div>
     </form>
   </main>
 

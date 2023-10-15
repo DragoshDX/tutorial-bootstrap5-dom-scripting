@@ -103,6 +103,22 @@ input[type='color']:focus,
   bottom: 0;
 }
 
+.add-ingredient-fieldset {
+  background: var(--bs-white);
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  /* top: 0; left: 0; bottom: 0; right: 0; */
+  background: rgba(0, 0, 0, 0.5);
+}
+
 @media (min-width: 992px) {
   body {
     background: var(--bs-gray-100);
@@ -114,6 +130,10 @@ input[type='color']:focus,
 
   .form-footer {
     width: 100%;
+    position: static;
+  }
+
+  .add-ingredient-fieldset {
     position: static;
   }
 }
